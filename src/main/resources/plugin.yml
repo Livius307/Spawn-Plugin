@@ -1,0 +1,29 @@
+name: SpawnPlugin
+version: '1.0-SNAPSHOT'
+main: org.livius.spawnPlugin.SpawnPlugin
+api-version: '1.21'
+authors: [ Livius ]
+description: A join/leave message plugin!
+commands:
+  setspawn:
+    description: Sets players spawn.
+    usage: /<command>
+    aliases:
+      - sethome
+    permission: spawnPlugin.setspawn
+
+  spawn:
+    description: Teleports players to their spawn.
+    usage: /<command>
+    aliases:
+      - home
+    permission: spawnPlugin.spawn
+
+permissions:
+  spawnPlugin.setspawn:
+    description: Allows the player to set their spawn
+    default: true
+
+  spawnPlugin.spawn:
+    description: Allows the player to teleport to their spawn
+    default: true
