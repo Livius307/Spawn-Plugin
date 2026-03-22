@@ -2,6 +2,8 @@ package org.livius.spawnPlugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.livius.spawnPlugin.commands.SetSpawnCommand;
+import org.livius.spawnPlugin.commands.SpawnCommand;
+import org.livius.spawnPlugin.listeners.SpawnListener;
 
 public final class SpawnPlugin extends JavaPlugin {
 
@@ -13,5 +15,7 @@ public final class SpawnPlugin extends JavaPlugin {
 
 
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
+        getCommand("spawn").setExecutor(new SpawnCommand(this));
+        getServer().getPluginManager().registerEvents(new SpawnListener(this), this);
     }
 }

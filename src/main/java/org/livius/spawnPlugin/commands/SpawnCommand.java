@@ -19,9 +19,14 @@ public class SpawnCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player p){
             Location location = plugin.getConfig().getLocation("spawn");
-            p.teleport(location);
-            p.sendMessage("Teleported to spawn successfully!");
 
+            if (location != null) {
+                p.teleport(location);
+                p.sendMessage("Teleported to spawn successfully!");
+            }else {
+                p.sendMessage("You need to set your spawnpoint first!");
+                p.sendMessage("Do this with /setspawn!");
+            }
         }else{
             System.out.println("bro what yo tryna do?");
         }
